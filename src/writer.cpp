@@ -59,7 +59,7 @@ void FileWriter::correctFilename() {
   localtime_r(&start, &startTm);
   if (startTm.tm_year + 1900 > 2019) {
     char name[32];
-    snprintf(name, sizeof (name), "/%04d-%02d-%02dT%02d.%02d.%02d-%4x",
+    snprintf(name, sizeof (name), "/%04d-%02d-%02dT%02d.%02d.%02d-%04x",
              startTm.tm_year + 1900, startTm.tm_mon + 1, startTm.tm_mday,
              startTm.tm_hour, startTm.tm_min, startTm.tm_sec,
              (uint16_t)(ESP.getEfuseMac() >> 32));
